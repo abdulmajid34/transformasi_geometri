@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web App Transformasi Geometri</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web App Transformasi Geometri</h1>
+      <canvas id="canvas" width="600" height="400"></canvas>
+
+      <div class="controls">
+        <div>
+          <label>Translasi:</label>
+          <button onclick="translateObject(-10, 0)">←</button>
+          <button onclick="translateObject(10, 0)">→</button>
+          <button onclick="translateObject(0, -10)">↑</button>
+          <button onclick="translateObject(0, 10)">↓</button>
+        </div>
+
+        <div>
+          <label>Rotasi:</label>
+          <input
+            type="range"
+            id="rotation-slider"
+            min="0"
+            max="360"
+            value="0"
+            oninput="rotateObject(this.value)"
+          />
+        </div>
+
+        <div>
+          <label>Skala:</label>
+          <input
+            type="range"
+            id="scale-slider"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+            oninput="scaleObject(this.value)"
+          />
+        </div>
+
+        <button onclick="resetTransform()">Reset</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
